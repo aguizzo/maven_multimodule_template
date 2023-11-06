@@ -1,6 +1,5 @@
 package com.itbulls.learnit.onlinestore.core.menu.impl;
 
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
 import com.itbulls.learnit.onlinestore.core.configs.ApplicationContext;
