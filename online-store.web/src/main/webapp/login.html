@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/form-styles.css" />
+  </head>
+  <body class="form-layout">
+    <form class="form" action="" method="POST">
+      <h2>Welcome back!</h2>
+      <div class="form__group form__group--labeled">
+        <label class="label-form" for="email">Email: </label>
+        <input
+          id="email"
+          class="form-control"
+          type="text"
+          placeholder="Email adress"
+          autofocus
+        />
+      </div>
+      <div class="form__group form__group--labeled">
+        <label class="label-form" for="password">Password: </label>
+        <input
+          id="password"
+          class="form-control"
+          type="password"
+          placeholder="Password"
+        />
+      </div>
+      <div class="form__group">
+        <input type="checkbox" id="remember-me" />
+        <label for="remember-me">Remember me</label>
+      </div>
+      <button class="btn btn--primary">Sign in</button>
+    </form>
+  </body>
+</html>

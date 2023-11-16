@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" async></script>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar navbar--header">
+      <nav class="container nav nav--header collapsible">
+        <a href="#">
+          <div class="logo">
+            <svg class="icon icon--small icon--primary">
+              <use xlink:href="images/sprite.svg#logo"></use>
+            </svg>
+            <p class="logo__brand logo__brand--black">ONLINE STORE</p>
+          </div>
+        </a>
+        <svg class="icon icon--small nav__toggler">
+          <use xlink:href="images/sprite.svg#menu"></use>
+        </svg>
+        <ul class="list nav__list nav__list--header collapsible__content">
+          <li class="nav__item nav__item--header"><a href="#">Shop</a></li>
+          <li class="nav__item nav__item--header"><a href="#">About</a></li>
+          <li class="nav__item nav__item--header">
+            <a href="./login.html">Login</a>
+          </li>
+          <li class="nav__item nav__item--header">
+            <a href="./sign-up.html">Sign up</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <header class="header">
+          <h1 class="header__title">Welcome to our eCommerce store</h1>
+          <p class="header__subtitle">
+            Discover the best deals and shop from the comfort of your home
+          </p>
+        </header>
+        <div class="hero__body">
+          <button class="btn btn--secondary">Get Started</button>
+          <a class="link-arrow" href="#">Learn More</a>
+        </div>
+      </div>
+    </section>
+    <!-- Details -->
+    <section class="details">
+      <div class="container details__container">
+        <div class="header details__header">
+          <h2 class="header__title">Why Choose Us</h2>
+          <p class="header__subtitle">
+            We are comitted to providing a seamless shopping experience with a
+            wide selection of products, secure payments, and fast delivery. Join
+            our community of sastisfied customers today!
+          </p>
+        </div>
+        <img
+          class="details__image"
+          src="https://images.unsplash.com/photo-1604776485611-4371f7a48cc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTM1MDQwMHw&ixlib=rb-4.0.3&q=80&w=400"
+          alt="Image of our shop"
+        />
+      </div>
+    </section>
+    <!-- Features -->
+    <section class="features">
+      <div class="container">
+        <header class="header">
+          <h2 class="header__title">Explore the Features</h2>
+          <p class="header__subtitle">
+            Discover the key features that make our eCommerce unique!
+          </p>
+        </header>
+        <div class="grid grid--col-2 features__body">
+          <div class="media">
+            <div class="media__image">
+              <svg class="icon icon--primary icon--small">
+                <use xlink:href="images/sprite.svg#cube-icon"></use>
+              </svg>
+            </div>
+            <div class="media__body">
+              <h3>User-friendly Navigation</h3>
+              <p>
+                Easily navigate through the website with a simple and intuitive
+                navbar.
+              </p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media__image">
+              <svg class="icon icon--primary icon--small">
+                <use xlink:href="images/sprite.svg#cube-icon"></use>
+              </svg>
+            </div>
+            <div class="media__body">
+              <h3>User-friendly Navigation</h3>
+              <p>
+                Easily navigate through the website with a simple and intuitive
+                navbar.
+              </p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media__image">
+              <svg class="icon icon--primary icon--small">
+                <use xlink:href="images/sprite.svg#cube-icon"></use>
+              </svg>
+            </div>
+            <div class="media__body">
+              <h3>User-friendly Navigation</h3>
+              <p>
+                Easily navigate through the website with a simple and intuitive
+                navbar.
+              </p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media__image">
+              <svg class="icon icon--primary icon--small">
+                <use xlink:href="images/sprite.svg#cube-icon"></use>
+              </svg>
+            </div>
+            <div class="media__body">
+              <h3>User-friendly Navigation</h3>
+              <p>
+                Easily navigate through the website with a simple and intuitive
+                navbar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Products Gallery -->
+    <section class="products">
+      <div class="container">
+        <header class="header">
+          <h2 class="header__title">Explore Our Products</h2>
+          <p class="header__subtitle">
+            Discover a wide range of products we offer
+          </p>
+        </header>
+        <div class="products__gallery">
+          <div class="grid grid--col-2 grid--col-4 gallery">
+            <img src="https://picsum.photos/300/300" alt="" />
+            <img src="https://picsum.photos/300/300" alt="" />
+            <img src="https://picsum.photos/300/300" alt="" />
+            <img src="https://picsum.photos/300/300" alt="" />
+            <img src="https://picsum.photos/300/300" alt="" />
+            <img src="https://picsum.photos/300/300" alt="" />
+            <img src="https://picsum.photos/300/300" alt="" />
+            <img src="https://picsum.photos/300/300" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <nav class="container nav nav--footer">
+        <a href="#">
+          <div class="logo">
+            <svg class="icon icon--small icon--primary">
+              <use xlink:href="images/sprite.svg#logo"></use>
+            </svg>
+            <p class="logo__brand logo__brand--white">ONLINE STORE</p>
+          </div>
+        </a>
+        <ul class="list nav__list nav__list--footer">
+          <li class="nav__item nav__item--footer"><a href="#">Shop</a></li>
+          <li class="nav__item nav__item--footer"><a href="#">About</a></li>
+          <li class="nav__item nav__item--footer"><a href="#">Login</a></li>
+          <li class="nav__item nav__item--footer"><a href="#">Sign up</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+        <div class="footer__copyright">
+          <p>© 2023 Online Store, All Rights Reserved.</p>
+          <div class="social-icons">
+            <svg class="icon icon--small icon--white">
+              <use xlink:href="images/sprite.svg#twitter"></use>
+            </svg>
+            <svg class="icon icon--small icon--white">
+              <use xlink:href="images/sprite.svg#instagram"></use>
+            </svg>
+            <svg class="icon icon--small icon--white">
+              <use xlink:href="images/sprite.svg#facebook"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
