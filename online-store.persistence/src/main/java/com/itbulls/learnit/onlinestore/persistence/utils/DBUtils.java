@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class DBUtils {
 	
 	private static final String JDBC_MYSQL_HOST = "jdbc:mysql://localhost:3306/";
@@ -11,13 +12,17 @@ public class DBUtils {
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "Androscorpio22!";
 	
+	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+//	private static final String DRIVER = "com.mysql.jdbc.Driver";
+	
 	private DBUtils() {
 	}
 	
 	public static Connection getConnection() {
 		try {
+			Class.forName(DRIVER);
 			return DriverManager.getConnection(JDBC_MYSQL_HOST + DB_NAME, USERNAME, PASSWORD);
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
 	}

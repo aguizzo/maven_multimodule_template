@@ -38,6 +38,8 @@ public class MySqlJdbcUserDao implements UserDao {
 			ps.setString(3, user.getEmail());
 			if (user.getRoleDto() != null && user.getRoleDto().getId() != null)
 				ps.setInt(4, user.getRoleDto().getId());
+			else if (user.getRoleDto() != null && !user.getRoleDto().getRoleName().isEmpty())
+				ps.setInt(4, roleDao.getRoleByRoleName(user.getRoleDto().getRoleName()).getId());
 			else
 				ps.setNull(4, java.sql.Types.NULL);
 			ps.setBigDecimal(5, user.getMoney());

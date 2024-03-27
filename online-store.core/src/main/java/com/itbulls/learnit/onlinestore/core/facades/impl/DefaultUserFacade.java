@@ -25,8 +25,15 @@ public class DefaultUserFacade implements UserFacade {
 	
 	@Override
 	public void registerUser(User user) {
+		user.setRoleName(CUSTOMER_ROLE_NAME);
 		UserDto userDto = converter.convertUserToUserDto(user);
-		
+		boolean saved = userDao.saveUser(userDto);
+		if (saved) {
+			System.out.println("User saved to data base");
+		}
+		else {
+			System.out.println("Failed to save user");
+		}
 	}
 
 	@Override
