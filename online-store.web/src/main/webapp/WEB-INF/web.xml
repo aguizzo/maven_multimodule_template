@@ -11,16 +11,6 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>HelloWorldServlet</display-name>
-    <servlet-name>HelloWorldServlet</servlet-name>
-    <servlet-class>com.itbulls.learnit.onlinestore.web.servlets.HelloWorldServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>HelloWorldServlet</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>SignUpServlet</display-name>
     <servlet-name>SignUpServlet</servlet-name>
     <servlet-class>com.itbulls.learnit.onlinestore.web.controllers.SignUpServlet</servlet-class>
@@ -39,4 +29,14 @@
     <servlet-name>SignInServlet</servlet-name>
     <url-pattern>/SignInServlet</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>AdminFilter</display-name>
+    <filter-name>AdminFilter</filter-name>
+    <filter-class>com.itbulls.learnit.onlinestore.web.filters.AdminFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AdminFilter</filter-name>
+    <url-pattern>/admin/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
 </web-app>
