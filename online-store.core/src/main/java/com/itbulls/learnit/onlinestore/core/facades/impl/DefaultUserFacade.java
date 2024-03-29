@@ -38,7 +38,10 @@ public class DefaultUserFacade implements UserFacade {
 
 	@Override
 	public User getUserByEmail(String email) {
-		// TODO Auto-generated method stub
+		UserDto userDto = userDao.getUserByEmail(email);
+		if (userDto != null) { 
+			return converter.convertUserDtoToUser(userDto);	
+		}
 		return null;
 	}
 
