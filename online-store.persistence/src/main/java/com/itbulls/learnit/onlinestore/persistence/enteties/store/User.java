@@ -27,4 +27,9 @@ public interface User {
 	String getCreditCard();
 	void setCreditCard(String creditCard);
 	
+	String getPartnerCode();
+	void setPartnerCode(String partnerCode);
+	
+	void setReferrerUser(User referrerUser);
+	User getReferrerUser();
 }

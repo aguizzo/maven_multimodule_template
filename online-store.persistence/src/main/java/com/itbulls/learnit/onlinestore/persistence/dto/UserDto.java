@@ -12,6 +12,8 @@ public class UserDto {
 	private BigDecimal money;
 	private String password;
 	private String creditCard;
+	private String partnerCode;
+	private UserDto referrerUser;
 	
 	
 	public Integer getId() {
@@ -61,6 +63,18 @@ public class UserDto {
 	}
 	public void setCreditCard(String creditCard) {
 		this.creditCard = creditCard;
+	}
+	public String getPartnerCode() {
+		return partnerCode;
+	}
+	public void setPartnerCode(String partnerCode) {
+		this.partnerCode = partnerCode;
+	}
+	public UserDto getReferrerUser() {
+		return referrerUser;
+	}
+	public void setReferrerUser(UserDto referrerUser) {
+		this.referrerUser = referrerUser;
 	}
 	
 	

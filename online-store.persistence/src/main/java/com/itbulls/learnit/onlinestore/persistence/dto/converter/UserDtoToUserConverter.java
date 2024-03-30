@@ -36,11 +36,15 @@ private RoleDtoToRoleConverter roleConverter;
 			user.setRoleName(userDto.getRoleDto().getRoleName());
 		user.setMoney(userDto.getMoney().doubleValue());
 		user.setCreditCard(userDto.getCreditCard());
+		user.setPartnerCode(userDto.getPartnerCode());
 		
 		return user;
 	}
 	
 	public UserDto convertUserToUserDto(User user) {
+		if (user == null) {
+			return null;
+		}
 		UserDto userDto = new UserDto();
 		userDto.setId(user.getId());
 		userDto.setEmail(user.getEmail());
@@ -50,7 +54,8 @@ private RoleDtoToRoleConverter roleConverter;
 		userDto.setRoleDto(roleConverter.convertRoleNameToRoleDtoWithOnlyRoleName(user.getRoleName()));
 		userDto.setMoney(BigDecimal.valueOf(user.getMoney()));
 		userDto.setCreditCard(user.getCreditCard());
-		
+		userDto.setPartnerCode(user.getPartnerCode());
+		userDto.setReferrerUser(convertUserToUserDto(user.getReferrerUser()));
 		return userDto;
 	}
 

@@ -3,6 +3,8 @@ package com.itbulls.learnit.onlinestore.core.facades.impl;
 import static com.itbulls.learnit.onlinestore.persistence.dto.RoleDto.CUSTOMER_ROLE_NAME;
 
 import com.itbulls.learnit.onlinestore.core.facades.UserFacade;
+import com.itbulls.learnit.onlinestore.core.services.AffiliateMarketingService;
+import com.itbulls.learnit.onlinestore.core.services.impl.DefaultAffiliateMarketingService;
 import com.itbulls.learnit.onlinestore.persistence.dao.UserDao;
 import com.itbulls.learnit.onlinestore.persistence.dao.impl.MySqlJdbcUserDao;
 import com.itbulls.learnit.onlinestore.persistence.dto.UserDto;
@@ -14,6 +16,7 @@ public class DefaultUserFacade implements UserFacade {
 	private static DefaultUserFacade instance;
 	private UserDao userDao = new MySqlJdbcUserDao();
 	private UserDtoToUserConverter converter = new UserDtoToUserConverter();
+	private AffiliateMarketingService marketingService = new DefaultAffiliateMarketingService();
 	
 	private DefaultUserFacade() {}
 	
@@ -24,8 +27,12 @@ public class DefaultUserFacade implements UserFacade {
 	}
 	
 	@Override
-	public void registerUser(User user) {
+	public void registerUser(User user, String referrerCode) {
 		user.setRoleName(CUSTOMER_ROLE_NAME);
+		user.setPartnerCode(marketingService.generateUniquePartnerCode());
+		UserDto userReferrerDto = userDao.getUserByPartnerCode(referrerCode);
+		user.setReferrerUser(converter.convertUserDtoToUser(userReferrerDto));
+		
 		UserDto userDto = converter.convertUserToUserDto(user);
 		boolean saved = userDao.saveUser(userDto);
 		if (saved) {

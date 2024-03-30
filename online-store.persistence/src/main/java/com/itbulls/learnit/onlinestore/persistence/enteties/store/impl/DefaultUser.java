@@ -23,6 +23,9 @@ public class DefaultUser implements User {
 	private String roleName;
 	private double money;
 	private String creditCard;
+	
+	private String partnerCode;
+	private User referrerUser;
 
 	{
 		id = ++userCounter;
@@ -40,7 +43,7 @@ public class DefaultUser implements User {
 
 	public DefaultUser(int id, String firstName, String lastName, String password, String email) {
 		this.id = id;
-		userCounter--; // to keep sequantial id
+		userCounter--; // to keep a sequential id
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
@@ -134,20 +137,44 @@ public class DefaultUser implements User {
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
-
+	
+	@Override
 	public double getMoney() {
 		return money;
 	}
-
+	
+	@Override
 	public void setMoney(double money) {
 		this.money = money;
 	}
-
+	
+	@Override
 	public String getCreditCard() {
 		return creditCard;
 	}
-
+	
+	@Override
 	public void setCreditCard(String creditCard) {
 		this.creditCard = creditCard;
+	}
+
+	@Override
+	public String getPartnerCode() {
+		return partnerCode;
+	}
+
+	@Override
+	public void setPartnerCode(String partnerCode) {
+		this.partnerCode = partnerCode;
+	}
+
+	@Override
+	public void setReferrerUser(User referrerUser) {
+		this.referrerUser = referrerUser;		
+	}
+
+	@Override
+	public User getReferrerUser() {
+		return referrerUser;
 	}
 }
