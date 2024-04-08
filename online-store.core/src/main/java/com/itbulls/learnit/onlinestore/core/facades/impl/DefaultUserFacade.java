@@ -2,6 +2,8 @@ package com.itbulls.learnit.onlinestore.core.facades.impl;
 
 import static com.itbulls.learnit.onlinestore.persistence.dto.RoleDto.CUSTOMER_ROLE_NAME;
 
+import java.util.List;
+
 import com.itbulls.learnit.onlinestore.core.facades.UserFacade;
 import com.itbulls.learnit.onlinestore.core.services.AffiliateMarketingService;
 import com.itbulls.learnit.onlinestore.core.services.impl.DefaultAffiliateMarketingService;
@@ -50,6 +52,11 @@ public class DefaultUserFacade implements UserFacade {
 			return converter.convertUserDtoToUser(userDto);	
 		}
 		return null;
+	}
+
+	@Override
+	public List<User> getUsers() {
+		return converter.convertUserDtosToUsers(userDao.getUsers());
 	}
 
 }
